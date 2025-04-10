@@ -1,0 +1,20 @@
+@use './reset';
+@import './mixins';
+
+// Fuentes
+$font-secondary: "Libre Barcode 128 Text", system-ui;
+
+// Colores
+$color-Bg-primary: #F4F4F4;
+$color-Bg-secondary: #fff;
+
+$color-Bg-form: #A57FB6;
+
+$color-edit: #3B94C0;
+$color-delete: #EE5C69;
+
+$color-complete: #4CAF50;
+$font-primary: monospace;
+
+
+$color-line: #000;
