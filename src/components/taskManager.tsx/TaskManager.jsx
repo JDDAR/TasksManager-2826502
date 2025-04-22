@@ -65,23 +65,23 @@ const TaskManager = () => {
           </div>
           <input
             type="text"
-            placeholder="TASK TITLE"
+            placeholder="TITULO DE LA TAREA "
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
           <textarea
-            placeholder="TASK DESCRIPTION"
+            placeholder="DESCRIPCIÓN DE LA TAREA "
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
           <button type="submit" className='buttonForm'>
             {editId ? (
               <>
-                <FaSave /> UPDATE TASK
+                <FaSave /> ACTUALIZAR TAREA
               </>
             ) : (
               <>
-                <FaPlus /> ADD TASK
+                <FaPlus /> AGREGAR TAREA
               </>
             )}
           </button>
@@ -119,13 +119,13 @@ const TaskManager = () => {
                   className='buttonEdit'
                   onClick={() => handleEdit(task)}
                 >
-                  <FaEdit /> EDIT
+                  <FaEdit /> EDITAR
                 </button>
                 <button
                   className='buttonDelete'
                   onClick={() => handleDelete(task.id)}
                 >
-                  <FaTrash /> DELETE
+                  <FaTrash /> ELIMINAR
                 </button>
               </div>
             </div>

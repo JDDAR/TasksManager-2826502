@@ -1,0 +1,185 @@
+@use '../../variables' as *;
+
+.containerTasks {
+  display: flex;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: $color-Bg-primary;
+
+  &-left {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 60%;
+    padding: 20px;
+    border-right: 3px solid $color-line;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h1 {
+      font-size: 8rem;
+      font-family: $font-secondary;
+      text-align: start;
+      color: rgba($color-line, 0.1);
+    }
+
+    &-form {
+      width: 100%;
+      border: 3px solid $color-line;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      background-color: $color-Bg-secondary;
+      padding: 20px;
+      height: auto;
+
+      input,
+      textarea {
+        font-size: 1rem;
+        padding: 10px;
+        background: $color-Bg-form;
+        border: 3px solid $color-line;
+        border-radius: 6px;
+        font-family: monospace;
+
+        &:focus {
+          outline: none;
+          box-shadow: 0 0 0 2px $color-edit;
+        }
+      }
+
+      .buttonForm {
+        padding: 1rem;
+        border-radius: 6px;
+        background: #F1BD33;
+        border: 3px solid $color-line;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+
+      }
+    }
+  }
+
+  &-right {
+    padding: 25px;
+    height: 100vh;
+    width: 100%;
+    overflow-y: auto;
+    background: $color-Bg-primary;
+
+    .tasks-lists {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+
+      .task-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        border: 3px solid $color-line;
+        background: $color-Bg-secondary;
+        padding: 20px;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+
+        &[data-completed="true"] {
+          opacity: 0.6;
+          background: rgba($color-Bg-secondary, 0.7);
+        }
+
+        h3 {
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: $color-line;
+        }
+
+        p {
+          color: rgba($color-line, 0.5);
+          line-height: 1.4;
+        }
+      }
+
+      .task-actions {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        margin-top: 10px;
+
+        button {
+          width: 100%;
+          padding: 0.5rem;
+          border-radius: 6px;
+          border: 2px solid $color-line;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          font-weight: bold;
+          cursor: pointer;
+          transition: all 0.2s ease;
+
+          &:hover {
+            transform: translateY(-2px);
+          }
+
+          svg {
+            font-size: 1rem;
+          }
+        }
+
+        .buttonComplete {
+          background: #4CAF50;
+          color: white;
+          position: absolute;
+          height: 35px;
+          width: 35px;
+          border-radius: 50px;
+          top: -15px;
+          right: -10px;
+
+        }
+
+        .buttonEdit {
+          background: $color-edit;
+          color: white;
+        }
+
+        .buttonDelete {
+          background: $color-delete;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+// Custom scrollbar
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-Bg-primary;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-line;
+  border-radius: 6px;
+  border: 3px solid $color-Bg-primary;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba($color-line, 0.5);
+}
